@@ -10,7 +10,8 @@ const ScreenLoader = ({ progress }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 overflow-hidden z-50"
     style={{overflow:"hidden"}}>
       {/* <img src={circle} alt="Loading" className="w-16 h-16" /> */}
-      <CircularProgressWithLabel progress={progress}/>
+      {/* <CircularProgressWithLabel progress={progress}/> */}
+      <progress value={progress} />
     </div>
   );
 };
