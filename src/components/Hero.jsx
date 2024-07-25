@@ -32,7 +32,7 @@ const Hero = () => {
 
 
   const { progress } = useProgress();
-  console.log('progress', progress)
+  
 
 gsap.registerPlugin(ScrollTrigger);
 

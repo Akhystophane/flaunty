@@ -11,7 +11,11 @@ const ScreenLoader = ({ progress }) => {
     style={{overflow:"hidden"}}>
       {/* <img src={circle} alt="Loading" className="w-16 h-16" /> */}
       {/* <CircularProgressWithLabel progress={progress}/> */}
-      <progress value={progress} />
+      {console.log('progress', progress)}
+      {/* <progress value={progress} /> */}
+      <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+        <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: `${progress}%`}}> {progress}%</div>
+      </div>
     </div>
   );
 };
