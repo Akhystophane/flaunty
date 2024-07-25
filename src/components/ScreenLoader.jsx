@@ -7,7 +7,7 @@ const ScreenLoader = ({ progress }) => {
   if (progress === 100) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       {/* <img src={circle} alt="Loading" className="w-16 h-16" /> */}
       <CircularProgressWithLabel progress={progress}/>
     </div>
