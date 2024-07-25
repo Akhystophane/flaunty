@@ -161,7 +161,7 @@ const Section1 = () => {
                             text-n-2 
                             lg:leading-relaxed 
                             lg_max:text-justify">
-                We've got your back! Pineapple is a no-code, 3D object-oriented website builder that empowers you to create stunning websites. Focus on crafting amazing 3D models, and we'll help you showcase them to the world!
+                We've got your back! Flaunty is a no-code, 3D object-oriented website builder that empowers you to create stunning websites. Focus on crafting amazing 3D models, and we'll help you showcase them to the world!
               </p>
             </div>
             )}
@@ -219,7 +219,7 @@ const Section1 = () => {
                             text-n-2 
                             lg:leading-relaxed 
                             lg_max:text-justify">
-                We've got your back! Pineapple is a no-code, 3D object-oriented website builder that empowers you to create stunning websites. Focus on crafting amazing 3D models, and we'll help you showcase them to the world!
+                We've got your back! Flaunty is a no-code, 3D object-oriented website builder that empowers you to create stunning websites. Focus on crafting amazing 3D models, and we'll help you showcase them to the world!
               </p>
             </div>
             )}

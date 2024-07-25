@@ -68,9 +68,7 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
             let sc = 5;
             let posY = -3.75;
             let posZ;
-            console.log(windowWidth)
             if (50000>windowWidth &&  windowWidth >= 1600 ) {
-                console.log('1536>windowWidth >= 1280 ')
                 sc = 4;
                 posZ = -4
                 posY = -2.5;
@@ -81,7 +79,6 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                 group.current.rotation.y = rot.y;
                 group.current.rotation.z = rot.z;
             } else if (windowWidth >= 1280) {
-                console.log('windowWidth >= 1280')
                 sc = 3.5;
                 posZ = -3
                 posY = -2.5;
@@ -93,7 +90,6 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                 group.current.rotation.z = rot.z;
 
             }else if (windowWidth >= 1536) {
-                console.log('windowWidth >= 1536')
                 sc = 3;
                 posZ = -4
                 posY = -2.5;

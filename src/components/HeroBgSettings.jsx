@@ -85,7 +85,6 @@ const getAnimationSettings = () => {
             starsY: 0
         };
     } else if (width >= 1536) { // Au-delà de '2xl'
-        //console.log('+2xl')
         settings = {
             ...settings,
             mountain3Y: "-=70",

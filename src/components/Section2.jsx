@@ -19,7 +19,7 @@ const Section2 = () => {
 
   return (
     <div id='register' className='relative bg-[rgba(40,42,87,1)] overflow-hidden' style={{background:`linear-gradient(270deg, rgba(98,3,103,1) 0%, rgba(40,42,87,1) 100%)`}}>
-      <h3 className='h3 text-center py-5'>Enter your Email to start Now</h3>
+      <h3 className='h3 text-center xs_max:text-[1.25rem] py-5 '>Enter your Email to start Now</h3>
       <form onSubmit={handleSubmit} className="max-w-sm mx-auto pt-5 pb-10 ">
         <div className="mb-5">
           <input 

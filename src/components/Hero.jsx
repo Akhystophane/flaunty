@@ -7,7 +7,8 @@ import HeroBackground from './HeroBackground'
 import Button from "./Button";
 import curve from '../assets/curve.png';
 import { gsap, ScrollTrigger } from "gsap/all";
-import { Dodecahedron } from '@react-three/drei'
+import { useProgress } from '@react-three/drei'
+import ScreenLoader from './ScreenLoader'
 
 
 
@@ -18,20 +19,10 @@ const Hero = () => {
   const beginScale = 0.53;
   const [scale, setScale] = useState(beginScale);
   const [pineapplePosition, setPineapplePosition] = useState([0, 0, 0]);
-
   const updatePineapplePosition = (position) => {
     setPineapplePosition(position); };
 
-/*   const handleScroll = () => {
-    const newScale = scale + window.scrollY / 15000;
-    if ( newScale < 0.3) {
-      setScale(newScale);
-    }}
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []); */
 
   const pineappleRef = useRef(null);
   const lightBoxRef = useRef(null);
@@ -40,7 +31,8 @@ const Hero = () => {
   const [animationStarted, setAnimationStarted] = useState(false);
 
 
-
+  const { progress } = useProgress();
+  console.log('progress', progress)
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,7 +55,7 @@ useEffect (() => {
           
   }});
 
-  console.log(tl.progress)
+  
   tl.to(logRef.current, {
       x:'100%',
       rotate: '0deg',
@@ -104,13 +96,12 @@ useEffect (() => {
     },
     markers: false, // Pour le débogage, vous pouvez le désactiver plus tard
   });
-
-
 })
 
 
   return (
     <>
+    <ScreenLoader progress={progress}/>
     <div  className='w-full h-[5000px] relative scroll-smooth' style={{background:`linear-gradient(#EDFC54, #A74A67, ${background}%, #673D7D, #0F2B9C)`}}>
     
     <HeroBackground />
@@ -132,7 +123,7 @@ useEffect (() => {
       mx-auto text-center mb-[0rem] pt-[3rem] lg:mb-[0rem] lg:pt-[5.5rem] xl:pt-[5.75rem] 2xl:pt-[6rem]'>
           <h1 className='h1 mb-6 pb-2'>Create a 3D website has never been easier with {` `} 
           <div className='inline-block relative overflow-hidden -mb-4 pb-0 -mt-2 '>
-          <span className='block '>Pineapple  
+          <span className='block '>Flaunty  
           
             <img ref={logRef} className='absolute h-[10%] -mt-1 top-[100%] -left-[100%] w-full rotate-[-5deg] opacity-[0]
               sm:h-[12%] sm:-mt-2 lg:h-[8%] lg:-mt-[0.4rem]
@@ -144,7 +135,7 @@ useEffect (() => {
           <p className='body-1 max-w-3xl mx-auto mb-6
           text-n-2 lg:mb-5'>
               Give your project the spotlight it deserves. 
-              More than a 3D website builder, Pineapple allows
+              More than a 3D website builder, Flaunty allows
               you to create unfortgetable web experiences.
 
           </p>
@@ -154,7 +145,7 @@ useEffect (() => {
     <div className=' h-[40vh] w-full '>
       <Canvas className='z-[2]' camera={{ position: [0, -1, 8], fov: 60 }} >
 
-          <Suspense fallback={<Loader/>}>
+          <Suspense fallback={<Loader />}>
                   {/* <gridHelper /> */}
 
                   <Pineapple scale={scale} ref={pineappleRef} position={[0, -1.6, 0]} updatePineapplePosition={updatePineapplePosition}/>

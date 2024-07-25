@@ -151,7 +151,7 @@ const sun2 = useRef(null);
 
   return (
     <>
-    <div className="w-full debug h-[100vh] absolute z-[0] " ref={parallaxRef}>
+    <div className="w-full h-[100vh] absolute z-[0] " ref={parallaxRef}>
        <img src={Sun} className="absolute  -translate-x-1/2 -translate-y-1/2 z-[0] w-[40%] top-[70%] left-1/2 2xl_max:-translate-y-1/2
     lg_max:-translate-y-[2rem] lg_max:w-[45%] md_max:-translate-y-[6rem] sm_max:-translate-y-[2rem] xs_max:translate-y-[2rem]" ref={sun}></img>
        <img src={Mountain1} className="absolute z-[1] bottom-0 w-full h-auto  md_max:py-12 sm_max:py-16 xs_max:-bottom-5" ref={mountain1}></img>
