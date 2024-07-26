@@ -3,11 +3,15 @@ import axios from 'axios';
 
 const Section2 = () => {
   const [email, setEmail] = useState('');
+  
+  // Définissez l'URL de l'API en utilisant une variable d'environnement
+  const API_URL = process.env.REACT_APP_API_URL || 'https://flaunty-8b316118970b.herokuapp.com';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/submit-email', { email });
+      // Utilisez l'URL de l'API définie ci-dessus
+      const response = await axios.post(`${API_URL}/api/submit-email`, { email });
       console.log(response.data);
       alert('Email submitted successfully!');
       setEmail('');
