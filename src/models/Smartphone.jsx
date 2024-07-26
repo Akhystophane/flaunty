@@ -171,9 +171,10 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
         if (actions) {
             const actionNames = Object.keys(actions);
             if (actionNames.length > 0) {
-            const action = actions[actionNames[0]];
+            const action = actions[actionNames[1]];
+            const levitation = actions[actionNames[0]];
             
-                if (progress <= 100 && progress >= 35) {
+                if (progress < 100 && progress >= 35 ) {
                 action.paused = false;  
                 const duration = action.getClip().duration;
                 const time = (progress / 100) * duration;
@@ -181,6 +182,9 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                 action.time = time;
                 action.play();
                 action.paused = true;
+                }
+                else {
+                  levitation.play()
                 }
         }
         }
@@ -190,7 +194,7 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
     <group ref={group} {...props} scale={3} rotation={[0,-1.5,0]} position={[0,-2,0]}>
       <group name="Scene">
         <group name="iphone" position={[0, 2.381, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={7.476}>
-          <group name="USDRoot" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group name="USDRoot" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
             <group name="tracking_node_placeholder">
               <group name="PinkGkyfWkwvZoW">
                 <group name="CZdojDQNgDREeKv">
@@ -200,35 +204,35 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.AbxQOpRbGREHXRG.geometry}
-                      material={materials.IDdMwJVCyuFpUnA}
+                      material={materials['IDdMwJVCyuFpUnA.002']}
                     />
                     <mesh
                       name="alSOKOYgFKIcUtR"
                       castShadow
                       receiveShadow
                       geometry={nodes.alSOKOYgFKIcUtR.geometry}
-                      material={materials.sWxYOtHGWTcXRMx}
+                      material={materials['sWxYOtHGWTcXRMx.002']}
                     />
                     <mesh
                       name="FjhETOCBEeiBmch"
                       castShadow
                       receiveShadow
                       geometry={nodes.FjhETOCBEeiBmch.geometry}
-                      material={materials.KtvhjlxyToKjYkE}
+                      material={materials['KtvhjlxyToKjYkE.002']}
                     />
                     <mesh
                       name="lxsKwuOPNvmzBKg_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.lxsKwuOPNvmzBKg_0.geometry}
-                      material={materials.KhJiSWFcsscOusf}
+                      material={materials['KhJiSWFcsscOusf.002']}
                     />
                     <mesh
                       name="tWfjYtMZCfucxRt"
                       castShadow
                       receiveShadow
                       geometry={nodes.tWfjYtMZCfucxRt.geometry}
-                      material={materials.fdfRsQCrfvPBPfQ}
+                      material={materials['fdfRsQCrfvPBPfQ.002']}
                     />
                   </group>
                 </group>
@@ -238,14 +242,14 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                     castShadow
                     receiveShadow
                     geometry={nodes.aYjPeBrpBRopJbp.geometry}
-                    material={materials.xHgtbqndQshkTKG}
+                    material={materials['xHgtbqndQshkTKG.002']}
                   />
                   <mesh
                     name="BeQtuLXtpSTrzAH"
                     castShadow
                     receiveShadow
                     geometry={nodes.BeQtuLXtpSTrzAH.geometry}
-                    material={materials.initialShadingGroup}
+                    material={materials['initialShadingGroup.002']}
                   />
                   <group name="jfrkeZkELiVCUCj">
                     <mesh
@@ -253,42 +257,42 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.BDLCJBydsNjizog_0.geometry}
-                      material={materials.fGwijctGaiRaYJC}
+                      material={materials['fGwijctGaiRaYJC.002']}
                     />
                     <mesh
                       name="GWEiavWnRxbogtw_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.GWEiavWnRxbogtw_0.geometry}
-                      material={materials.FsunUcGyajFpQmW}
+                      material={materials['FsunUcGyajFpQmW.002']}
                     />
                     <mesh
                       name="JUTNJcWwqyxbGDZ_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.JUTNJcWwqyxbGDZ_0.geometry}
-                      material={materials.LJBezuBxKRoHnAp}
+                      material={materials['LJBezuBxKRoHnAp.002']}
                     />
                     <mesh
                       name="PLFTnNQeqVAxicS"
                       castShadow
                       receiveShadow
                       geometry={nodes.PLFTnNQeqVAxicS.geometry}
-                      material={materials.BLpVAsLWNICZYGG}
+                      material={materials['BLpVAsLWNICZYGG.002']}
                     />
                     <mesh
                       name="RFqaqXLpuCDBIGV_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.RFqaqXLpuCDBIGV_0.geometry}
-                      material={materials.nJRBoEsOhzMSqCz}
+                      material={materials['nJRBoEsOhzMSqCz.002']}
                     />
                     <mesh
                       name="tWBbDznHihIxXam"
                       castShadow
                       receiveShadow
                       geometry={nodes.tWBbDznHihIxXam.geometry}
-                      material={materials.OStzgRHtVBLWwiD}
+                      material={materials['OStzgRHtVBLWwiD.002']}
                     />
                   </group>
                   <mesh
@@ -296,21 +300,21 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                     castShadow
                     receiveShadow
                     geometry={nodes.KUDomTaVduCyevu.geometry}
-                    material={materials.KtvhjlxyToKjYkE}
+                    material={materials['KtvhjlxyToKjYkE.002']}
                   />
                   <mesh
                     name="QaGkMzxNzKPcqRy"
                     castShadow
                     receiveShadow
                     geometry={nodes.QaGkMzxNzKPcqRy.geometry}
-                    material={materials.iEhZxWeNLTDdgxm}
+                    material={materials['iEhZxWeNLTDdgxm.002']}
                   />
                   <mesh
                     name="QOfJIBEXOvXfSUh"
                     castShadow
                     receiveShadow
                     geometry={nodes.QOfJIBEXOvXfSUh.geometry}
-                    material={materials.vsSJQngPxBJTVZb}
+                    material={materials['vsSJQngPxBJTVZb.002']}
                   />
                   <group name="VKOyrvtwIfmqQxa">
                     <mesh
@@ -318,28 +322,28 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.aVmapfDgqkPkjUf.geometry}
-                      material={materials.WqbAhnIPgrrhfXS}
+                      material={materials['WqbAhnIPgrrhfXS.002']}
                     />
                     <mesh
                       name="CAQeTxdpUcbxQyT"
                       castShadow
                       receiveShadow
                       geometry={nodes.CAQeTxdpUcbxQyT.geometry}
-                      material={materials.KtvhjlxyToKjYkE}
+                      material={materials['KtvhjlxyToKjYkE.002']}
                     />
                     <mesh
                       name="qsTxqfACkdoWeLQ"
                       castShadow
                       receiveShadow
                       geometry={nodes.qsTxqfACkdoWeLQ.geometry}
-                      material={materials.IBtgGxCVyZhjKZM}
+                      material={materials['IBtgGxCVyZhjKZM.002']}
                     />
                     <mesh
                       name="tQCDizUpBYNcvFA"
                       castShadow
                       receiveShadow
                       geometry={nodes.tQCDizUpBYNcvFA.geometry}
-                      material={materials.LtesZnUOMbBEAoi}
+                      material={materials['LtesZnUOMbBEAoi.002']}
                     />
                   </group>
                   <group name="WdanqYwxRyUXWJc">
@@ -348,7 +352,7 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.zPPSOvNamLQVyvv.geometry}
-                      material={materials.qEGySvwsouNnVcn}
+                      material={materials['qEGySvwsouNnVcn.002']}
                     />
                   </group>
                   <group name="xjCPRgbYHLDauvS">
@@ -357,85 +361,85 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.MoTJNOoMxqdxNvQ.geometry}
-                      material={materials.IBtgGxCVyZhjKZM}
+                      material={materials['IBtgGxCVyZhjKZM.002']}
                     />
                     <group name="mZxrNiCtMrMjOMv">
                       <mesh
-                        name="mZxrNiCtMrMjOMv_1"
+                        name="mZxrNiCtMrMjOMv002"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_1.geometry}
-                        material={materials.WqbAhnIPgrrhfXS}
+                        geometry={nodes.mZxrNiCtMrMjOMv002.geometry}
+                        material={materials['WqbAhnIPgrrhfXS.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_2"
+                        name="mZxrNiCtMrMjOMv002_1"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_2.geometry}
-                        material={materials.CSNzlRnZuvCyxNL}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_1.geometry}
+                        material={materials['CSNzlRnZuvCyxNL.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_3"
+                        name="mZxrNiCtMrMjOMv002_2"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_3.geometry}
-                        material={materials.GFNYbWjyDVGUwJd}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_2.geometry}
+                        material={materials['GFNYbWjyDVGUwJd.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_4"
+                        name="mZxrNiCtMrMjOMv002_3"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_4.geometry}
-                        material={materials.tfbCjiZQaZkmtHx}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_3.geometry}
+                        material={materials['tfbCjiZQaZkmtHx.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_5"
+                        name="mZxrNiCtMrMjOMv002_4"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_5.geometry}
-                        material={materials.jFPFAvCbiqflbQV}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_4.geometry}
+                        material={materials['jFPFAvCbiqflbQV.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_6"
+                        name="mZxrNiCtMrMjOMv002_5"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_6.geometry}
-                        material={materials.rNCplyWedyfORFh}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_5.geometry}
+                        material={materials['rNCplyWedyfORFh.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_7"
+                        name="mZxrNiCtMrMjOMv002_6"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_7.geometry}
-                        material={materials.YiceMpFVTpnmoaq}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_6.geometry}
+                        material={materials['YiceMpFVTpnmoaq.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_8"
+                        name="mZxrNiCtMrMjOMv002_7"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_8.geometry}
-                        material={materials.LtesZnUOMbBEAoi}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_7.geometry}
+                        material={materials['LtesZnUOMbBEAoi.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_9"
+                        name="mZxrNiCtMrMjOMv002_8"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_9.geometry}
-                        material={materials.EJpkIDZfhPDUzel}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_8.geometry}
+                        material={materials['EJpkIDZfhPDUzel.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_10"
+                        name="mZxrNiCtMrMjOMv002_9"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_10.geometry}
-                        material={materials.LUbRMhkIhuekQRK}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_9.geometry}
+                        material={materials['LUbRMhkIhuekQRK.002']}
                       />
                       <mesh
-                        name="mZxrNiCtMrMjOMv_11"
+                        name="mZxrNiCtMrMjOMv002_10"
                         castShadow
                         receiveShadow
-                        geometry={nodes.mZxrNiCtMrMjOMv_11.geometry}
-                        material={materials.LJBezuBxKRoHnAp}
+                        geometry={nodes.mZxrNiCtMrMjOMv002_10.geometry}
+                        material={materials['LJBezuBxKRoHnAp.002']}
                       />
                     </group>
                     <mesh
@@ -443,7 +447,7 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.YPGjoywokSeoQFr.geometry}
-                      material={materials.KtvhjlxyToKjYkE}
+                      material={materials['KtvhjlxyToKjYkE.002']}
                     />
                   </group>
                 </group>
@@ -454,28 +458,28 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.IuMgFUHIyRWENxG_0.geometry}
-                      material={materials.LcWBQfBvCzxThpp}
+                      material={materials['LcWBQfBvCzxThpp.002']}
                     />
                     <mesh
                       name="nJYGEbPQybRBbiN"
                       castShadow
                       receiveShadow
                       geometry={nodes.nJYGEbPQybRBbiN.geometry}
-                      material={materials.tDZQoaroJfCIQtF}
+                      material={materials['tDZQoaroJfCIQtF.002']}
                     />
                     <mesh
                       name="RGbIswEcCTzqNsn_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.RGbIswEcCTzqNsn_0.geometry}
-                      material={materials.FlDKBWPodPcEeGy}
+                      material={materials['FlDKBWPodPcEeGy.002']}
                     />
                     <mesh
                       name="XeFHhVBtRZWPGxR"
                       castShadow
                       receiveShadow
                       geometry={nodes.XeFHhVBtRZWPGxR.geometry}
-                      material={materials.tfbCjiZQaZkmtHx}
+                      material={materials['tfbCjiZQaZkmtHx.002']}
                     />
                   </group>
                   <group name="hvHkgOsBqZjfnRJ">
@@ -484,21 +488,21 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.JyAbjubWrOdfygC_0.geometry}
-                      material={materials.jFPFAvCbiqflbQV}
+                      material={materials['jFPFAvCbiqflbQV.002']}
                     />
                     <mesh
                       name="nxFoHsySvfcSLvp"
                       castShadow
                       receiveShadow
                       geometry={nodes.nxFoHsySvfcSLvp.geometry}
-                      material={materials.KtvhjlxyToKjYkE}
+                      material={materials['KtvhjlxyToKjYkE.002']}
                     />
                     <mesh
                       name="oCklTGvTZoDWJrC_0"
                       castShadow
                       receiveShadow
                       geometry={nodes.oCklTGvTZoDWJrC_0.geometry}
-                      material={materials.tfbCjiZQaZkmtHx}
+                      material={materials['tfbCjiZQaZkmtHx.002']}
                     />
                   </group>
                   <group name="PBOTXpSeOPsBhmZ">
@@ -507,56 +511,56 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                       castShadow
                       receiveShadow
                       geometry={nodes.DLfIUIalXuQjJsL.geometry}
-                      material={materials.pBMikDFQfUOsKkr}
+                      material={materials['pBMikDFQfUOsKkr.002']}
                     />
                     <mesh
                       name="FaUtifOQSMTXiZM"
                       castShadow
                       receiveShadow
                       geometry={nodes.FaUtifOQSMTXiZM.geometry}
-                      material={materials.KtvhjlxyToKjYkE}
+                      material={materials['KtvhjlxyToKjYkE.002']}
                     />
                     <mesh
                       name="FGDSbHbILfUmiaH"
                       castShadow
                       receiveShadow
                       geometry={nodes.FGDSbHbILfUmiaH.geometry}
-                      material={materials.tfbCjiZQaZkmtHx}
+                      material={materials['tfbCjiZQaZkmtHx.002']}
                     />
                     <mesh
                       name="jQXfQpudiYObSGp"
                       castShadow
                       receiveShadow
                       geometry={nodes.jQXfQpudiYObSGp.geometry}
-                      material={materials.sWxYOtHGWTcXRMx}
+                      material={materials['sWxYOtHGWTcXRMx.002']}
                     />
                     <mesh
                       name="KABLQLZRuEbcLWk"
                       castShadow
                       receiveShadow
                       geometry={nodes.KABLQLZRuEbcLWk.geometry}
-                      material={materials.fdfRsQCrfvPBPfQ}
+                      material={materials['fdfRsQCrfvPBPfQ.002']}
                     />
                     <mesh
                       name="knexoFNknstHgiO"
                       castShadow
                       receiveShadow
                       geometry={nodes.knexoFNknstHgiO.geometry}
-                      material={materials.KtvhjlxyToKjYkE}
+                      material={materials['KtvhjlxyToKjYkE.002']}
                     />
                     <mesh
                       name="OMkeKbwVHRBkBwM"
                       castShadow
                       receiveShadow
                       geometry={nodes.OMkeKbwVHRBkBwM.geometry}
-                      material={materials.IkWzRHNnDaKQXIi}
+                      material={materials['IkWzRHNnDaKQXIi.002']}
                     />
                     <mesh
                       name="qjXEDwnnBYwWcJn"
                       castShadow
                       receiveShadow
                       geometry={nodes.qjXEDwnnBYwWcJn.geometry}
-                      material={materials.tfbCjiZQaZkmtHx}
+                      material={materials['tfbCjiZQaZkmtHx.002']}
                     />
                   </group>
                   <mesh
@@ -564,21 +568,21 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                     castShadow
                     receiveShadow
                     geometry={nodes.vauUojKrKkLLDtY.geometry}
-                    material={materials.HvAGJeQTAiWbceX}
+                    material={materials['HvAGJeQTAiWbceX.002']}
                   />
                   <mesh
                     name="wjSYkRykuFHJNPw"
                     castShadow
                     receiveShadow
                     geometry={nodes.wjSYkRykuFHJNPw.geometry}
-                    material={materials.KxzouvBYEgdZhMo}
+                    material={materials['KxzouvBYEgdZhMo.002']}
                   />
                   <mesh
                     name="yqmgDmvGsmuPwXx_0"
                     castShadow
                     receiveShadow
                     geometry={nodes.yqmgDmvGsmuPwXx_0.geometry}
-                    material={materials.bmOZLlCkCKhIIVe}
+                    material={materials['bmOZLlCkCKhIIVe.002']}
                   />
                 </group>
                 <mesh
@@ -586,7 +590,7 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                   castShadow
                   receiveShadow
                   geometry={nodes.UCttAeyROPsgmix.geometry}
-                  material={materials.KtvhjlxyToKjYkE}
+                  material={materials['KtvhjlxyToKjYkE.002']}
                 />
               </group>
             </group>
@@ -597,15 +601,15 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
           castShadow
           receiveShadow
           geometry={nodes.disapointed_emoji.geometry}
-          material={materials.M_Emoticon_56}
-          position={[-0.258, 3.077, -0.233]}
-          rotation={[-1.199, 0.046, -3.105]}
+          material={materials['M_Emoticon_56.002']}
+          position={[-0.401, 0.372, -0.187]}
+          rotation={[-1.262, 0.052, 3.138]}
           scale={0.03}
         />
         <group
           name="glasses_emoji"
-          position={[0.035, 2.902, -0.377]}
-          rotation={[-1.534, 0.012, -3.116]}
+          position={[-0.293, 0.669, -0.229]}
+          rotation={[-1.556, 0.005, -3.039]}
           scale={1.428}>
           <group name="Orange_Manfbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
             <group name="RootNode">
@@ -615,8 +619,8 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                   castShadow
                   receiveShadow
                   geometry={nodes.Orange_Atlas_Orange_0.geometry}
-                  material={materials.Atlas_Orange}
-                  position={[0.315, 0.903, 0.506]}
+                  material={materials['Atlas_Orange.002']}
+                  position={[-0.293, 0.669, -0.229]}
                   scale={1.428}
                 />
               </group>
@@ -632,9 +636,9 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                   castShadow
                   receiveShadow
                   geometry={nodes.Object_4.geometry}
-                  material={materials['Material.002']}
-                  position={[4.546, -1.157, -26.179]}
-                  rotation={[0.144, -0.017, -3.052]}
+                  material={materials['Material.003']}
+                  position={[3.969, -0.141, -2.104]}
+                  rotation={[-0.116, -0.013, -3.05]}
                 />
               </group>
             </group>
@@ -652,9 +656,9 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                   castShadow
                   receiveShadow
                   geometry={nodes.Emoticon_48_M_Emoticon_48_0.geometry}
-                  material={materials.M_Emoticon_48}
-                  position={[-6.077, 4.346, 55.343]}
-                  rotation={[0.44, 0.207, -0.548]}
+                  material={materials['M_Emoticon_48.002']}
+                  position={[-10.072, -0.883, 11.015]}
+                  rotation={[0.275, 0.107, 0.291]}
                   scale={0.5}
                 />
               </group>
@@ -673,9 +677,9 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                   castShadow
                   receiveShadow
                   geometry={nodes.no_emotion_emoji_.geometry}
-                  material={materials.M_Emoticon_40}
-                  position={[6.877, 3.492, 49.272]}
-                  rotation={[-0.04, -0.067, 0.258]}
+                  material={materials['M_Emoticon_40.002']}
+                  position={[7.647, -1.661, 12.319]}
+                  rotation={[-0.073, -0.038, 0.257]}
                   scale={0.38}
                 />
               </group>
@@ -691,9 +695,9 @@ export function Smartphone({progress,domRef,windowWidth,windowHeight, ...props})
                   castShadow
                   receiveShadow
                   geometry={nodes.poo_emoji001.geometry}
-                  material={materials.material}
-                  position={[-573.486, 1984.21, 48.578]}
-                  rotation={[3.132, -0.063, -3.101]}
+                  material={materials['material.002']}
+                  position={[388.684, 722.654, 326.026]}
+                  rotation={[3.1, -0.113, 3.092]}
                 />
               </group>
             </group>
