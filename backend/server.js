@@ -1,18 +1,23 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const helmet = require('helmet');
-const path = require('path');
-require('dotenv').config();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import helmet from 'helmet';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
 // Middleware
-app.use(helmet()); // Ajoute des en-têtes de sécurité
-app.use(cors({
-  origin: process.env.FRONTEND_URL // Remplacez par l'URL de votre frontend
-}));
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
+
 
 // Connexion à MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
