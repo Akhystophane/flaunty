@@ -145,7 +145,7 @@ useEffect (() => {
       </div>
 
     <div className=' h-[40vh] w-full '>
-    <Suspense fallback={<ScreenLoader progress={progress}/>}>
+    <Suspense >
       <Canvas className='z-[2]' camera={{ position: [0, -1, 8], fov: 60 }} >
 
           
