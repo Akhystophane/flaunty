@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -64,7 +65,13 @@ app.post('/api/submit-email', async (req, res) => {
   }
 });
 
+// Servir les fichiers statiques de l'application React
+app.use(express.static(path.join(__dirname, 'client/build')));
 
+// Gestion des routes non définies (Catchall handler)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 // Gestion des erreurs
 app.use((err, req, res, next) => {
