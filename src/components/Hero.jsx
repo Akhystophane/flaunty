@@ -1,13 +1,12 @@
 import {Suspense, useState, useEffect, useRef, forwardRef} from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import Pineapple from '../models/Pineapple'
-import Loader from './Loader'
 import InnerWorld from '../containers/InnerWorld'
 import HeroBackground from './HeroBackground'
 import Button from "./Button";
 import curve from '../assets/curve.png';
 import { gsap, ScrollTrigger } from "gsap/all";
-import { useProgress } from '@react-three/drei'
+import { useProgress, Loader } from '@react-three/drei'
 import ScreenLoader from './ScreenLoader'
 
 
@@ -101,7 +100,9 @@ useEffect (() => {
 
   return (
     <>
-    <ScreenLoader progress={progress}/>
+    {/* <ScreenLoader progress={progress}/> */}
+    <Loader />
+
     <div  className='w-full h-[5000px] relative scroll-smooth' style={{background:`linear-gradient(#EDFC54, #A74A67, ${background}%, #673D7D, #0F2B9C)`}}>
     
     <HeroBackground />
