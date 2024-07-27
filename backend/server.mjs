@@ -70,12 +70,13 @@ app.post('/api/submit-email', async (req, res) => {
   }
 });
 
-// Servir les fichiers statiques de l'application React
-app.use(express.static(path.join(__dirname, 'client/build')));
+// Servir les fichiers statiques de l'application React construite avec Vite
+const buildPath = path.join(__dirname, '../dist');
+app.use(express.static(buildPath));
 
 // Gestion des routes non définies (Catchall handler)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 // Gestion des erreurs
