@@ -15,7 +15,7 @@ const ScreenLoader = ({ progress }) => {
       const elapsedTime = Date.now() - startTime;
       const timeBasedProgress = Math.min((elapsedTime / maxDuration) * maxDisplayProgress, maxDisplayProgress);
       const finalProgress = Math.max(timeBasedProgress, progress);
-
+      
       setDisplayProgress(Math.round(finalProgress));
 
       if (progress < 100 && finalProgress < maxDisplayProgress) {
@@ -23,28 +23,20 @@ const ScreenLoader = ({ progress }) => {
       }
     };
 
-    requestAnimationFrame(updateProgress);
+    const animationFrame = requestAnimationFrame(updateProgress);
+
+    return () => cancelAnimationFrame(animationFrame);
   }, [progress]);
 
   if (progress >= 100) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50"
       style={{overflow: "hidden"}}
     >
       {console.log('fake one: ', displayProgress)}
-      <div className="w-4/5 max-w-md">
-        <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-          <div 
-            className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full transition-all duration-300 ease-out"
-            style={{width: `${displayProgress}%`}}
-          >
-            {displayProgress}%
-          </div>
-        </div>
-      </div>
-      
+      <CircularProgressWithLabel progress={displayProgress}/>
     </div>
   );
 };
