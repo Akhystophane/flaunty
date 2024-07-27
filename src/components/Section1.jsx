@@ -119,7 +119,7 @@ const Section1 = () => {
   return (
     <div   className='w-full min-h-[100vh] z[2] relative' style={{background:`linear-gradient(0deg, rgba(26,12,56,1) ${background}%, rgba(40,42,87,1) 100%)`}} >
         <div className='h-[100vh] w-full' ref={mainDivRef_}>
-        <Suspense fallback={<ScreenLoader progress={progress}/>}>
+        <Suspense >
         <Canvas className='relative z-[0] w-full min-h-[100vh] '
         style={{
         overflow:'visible'}}
