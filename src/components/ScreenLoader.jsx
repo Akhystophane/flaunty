@@ -34,7 +34,16 @@ const ScreenLoader = ({ progress }) => {
       style={{overflow: "hidden"}}
     >
       {console.log('fake one: ', displayProgress)}
-      <CircularProgressWithLabel progress={displayProgress}/> 
+      <div className="w-4/5 max-w-md">
+        <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+          <div 
+            className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-1 leading-none rounded-full transition-all duration-300 ease-out"
+            style={{width: `${displayProgress}%`}}
+          >
+            {displayProgress}%
+          </div>
+        </div>
+      </div>
       
     </div>
   );
