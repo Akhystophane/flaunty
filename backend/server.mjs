@@ -18,7 +18,8 @@ const helmetOptions = {
   contentSecurityPolicy: {
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-      "img-src": ["'self'", "blob:", 'data:'],
+      "img-src": ["'self'", "blob:", "data:"],
+      "script-src": ["'self'", "'wasm-unsafe-eval'"],
     },
   },
 };
