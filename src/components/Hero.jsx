@@ -145,17 +145,19 @@ useEffect (() => {
       </div>
 
     <div className=' h-[40vh] w-full '>
+    <Suspense fallback={<ScreenLoader progress={progress}/>}>
       <Canvas className='z-[2]' camera={{ position: [0, -1, 8], fov: 60 }} >
 
-          <Suspense >
+          
                   {/* <gridHelper /> */}
 
                   <Pineapple scale={scale} ref={pineappleRef} position={[0, -1.6, 0]} updatePineapplePosition={updatePineapplePosition}/>
                   <InnerWorld pineappleRef={pineappleRef} lightBoxRef={lightBoxRef}/>
                   
-          </Suspense>
+          
       </Canvas>
-      <Loader />
+      </Suspense>
+
       
       <div className='flex justify-center pt-5'>
 {/*       <Button href='/pricing' white>

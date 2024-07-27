@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import {Screen} from '../models/screen.jsx'
 import { Canvas, useThree } from '@react-three/fiber'
 import { OrbitControls, useProgress } from '@react-three/drei'
@@ -10,6 +10,7 @@ import { Html } from '@react-three/drei';
 import tourbillon from '../assets/svg/tourbillon.svg'
 import particles from '../assets/svg/particles.svg'
 import blur_particles from '../assets/svg/blur_particles.svg'
+import ScreenLoader from './ScreenLoader.jsx';
 
 
 
@@ -118,6 +119,7 @@ const Section1 = () => {
   return (
     <div   className='w-full min-h-[100vh] z[2] relative' style={{background:`linear-gradient(0deg, rgba(26,12,56,1) ${background}%, rgba(40,42,87,1) 100%)`}} >
         <div className='h-[100vh] w-full' ref={mainDivRef_}>
+        <Suspense fallback={<ScreenLoader progress={progress}/>}>
         <Canvas className='relative z-[0] w-full min-h-[100vh] '
         style={{
         overflow:'visible'}}
@@ -198,6 +200,7 @@ const Section1 = () => {
         {/* <Screen progress={progress}/> */}
         <Smartphone progress={progress} domRef={divRef} windowWidth={windowWidth} windowHeight={windowHeight} />
         </Canvas>  
+        </Suspense>
            
         </div>  
         <div>
