@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <Router>  
-    <Suspense fallback={<ScreenLoader progress={progress}/>}>
+    <ScreenLoader progress={progress}/>
 
       <div id='root' className='w-full h-full scroll-smooth'>
       <Header />
@@ -23,7 +23,7 @@ function App() {
       <Section1/>
       {/* <Section2 /> */}
       </div>
-      </Suspense>
+
       </Router>
 
 
