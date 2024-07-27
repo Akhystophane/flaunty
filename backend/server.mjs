@@ -14,7 +14,15 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 // Middleware
-app.use(helmet());
+const helmetOptions = {
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      "img-src": ["'self'", "blob:"],
+    },
+  },
+};
+app.use(helmet(helmetOptions));
 app.use(cors());
 app.use(express.json());
 
