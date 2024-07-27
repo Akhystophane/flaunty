@@ -6,7 +6,7 @@ import HeroBackground from './HeroBackground'
 import Button from "./Button";
 import curve from '../assets/curve.png';
 import { gsap, ScrollTrigger } from "gsap/all";
-import { useProgress, Loader } from '@react-three/drei'
+import { Loader, useProgress } from '@react-three/drei'
 import ScreenLoader from './ScreenLoader'
 
 
@@ -101,9 +101,10 @@ useEffect (() => {
   return (
     <>
     {/* <ScreenLoader progress={progress}/> */}
-    <Loader />
+    
 
     <div  className='w-full h-[5000px] relative scroll-smooth' style={{background:`linear-gradient(#EDFC54, #A74A67, ${background}%, #673D7D, #0F2B9C)`}}>
+    {/* <ScreenLoader progress={progress}/> */}
     
     <HeroBackground />
 
@@ -146,7 +147,7 @@ useEffect (() => {
     <div className=' h-[40vh] w-full '>
       <Canvas className='z-[2]' camera={{ position: [0, -1, 8], fov: 60 }} >
 
-          <Suspense fallback={<Loader />}>
+          <Suspense >
                   {/* <gridHelper /> */}
 
                   <Pineapple scale={scale} ref={pineappleRef} position={[0, -1.6, 0]} updatePineapplePosition={updatePineapplePosition}/>
@@ -154,6 +155,8 @@ useEffect (() => {
                   
           </Suspense>
       </Canvas>
+      <Loader />
+      
       <div className='flex justify-center pt-5'>
 {/*       <Button href='/pricing' white>
                 Get started

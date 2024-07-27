@@ -17,7 +17,7 @@ function App() {
       <Header />
       <Hero />
       <Section1/>
-      <Section2 />
+      {/* <Section2 /> */}
       </div>
       </Router>
 
