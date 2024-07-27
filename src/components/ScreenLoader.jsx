@@ -36,7 +36,7 @@ const ScreenLoader = ({ progress }) => {
       style={{overflow: "hidden"}}
     >
       {console.log('fake one: ', displayProgress)}
-      <CircularProgressWithLabel progress={progress}/>
+      <CircularProgressWithLabel progress={displayProgress}/>
     </div>
   );
 };

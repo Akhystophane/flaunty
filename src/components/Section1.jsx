@@ -214,7 +214,7 @@ const Section1 = () => {
                               mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-[3.25rem] 2xl:mt-[4rem] 
                               ${isHorizontal && windowWidth < 1280 ? 'text-[0.75rem]': ''}
                               lg_max:text-justify`}>
-                You want your work to stand out but building your own website seems overwhelming
+                You want your work to stand out but building your own website seems overwhelming 😩.
               </h3>
               <p className="body-1 
                             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[1.5rem]
