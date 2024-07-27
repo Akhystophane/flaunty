@@ -18,7 +18,7 @@ const helmetOptions = {
   contentSecurityPolicy: {
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-      "img-src": ["'self'", "blob:"],
+      "img-src": ["'self'", "blob:", 'data:'],
     },
   },
 };
