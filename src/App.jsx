@@ -15,15 +15,17 @@ function App() {
   return (
     <>
     <Router>  
-    <ScreenLoader progress={progress}/>
+    
 
       <div id='root' className='w-full h-full scroll-smooth'>
+      <Suspense fallback={<ScreenLoader progress={progress}/>}>
       <Header />
       <Hero />
       <Section1/>
       {/* <Section2 /> */}
+      </Suspense>
       </div>
-
+      
       </Router>
 
 
