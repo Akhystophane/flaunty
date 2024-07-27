@@ -26,7 +26,7 @@ const ScreenLoader = ({ progress }) => {
     const animationFrame = requestAnimationFrame(updateProgress);
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [progress]);
+  }, [progress, displayProgress]);
 
   if (progress >= 100) return null;
 
