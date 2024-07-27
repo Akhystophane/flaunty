@@ -9,17 +9,22 @@ const Section2 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(`Submitting email to ${API_URL}/api/submit-email`);
     try {
       // Utilisez l'URL de l'API définie ci-dessus
       const response = await axios.post(`${API_URL}/api/submit-email`, { email });
-      console.log(response.data);
+      console.log('Response data:', response.data);
       alert('Email submitted successfully!');
       setEmail('');
     } catch (error) {
       console.error('Error submitting email:', error);
+      if (error.response) {
+        console.error('Server responded with:', error.response.data);
+      }
       alert('Error submitting email. Please try again.');
     }
   };
+
 
   return (
     <div id='register' className='relative bg-[rgba(40,42,87,1)] overflow-hidden' style={{background:`linear-gradient(270deg, rgba(98,3,103,1) 0%, rgba(40,42,87,1) 100%)`}}>

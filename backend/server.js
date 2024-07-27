@@ -64,6 +64,8 @@ app.post('/api/submit-email', async (req, res) => {
   }
 });
 
+
+
 // Gestion des erreurs
 app.use((err, req, res, next) => {
   console.error(err.stack);
