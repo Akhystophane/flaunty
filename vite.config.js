@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: './',
+  root: './root', // Chemin vers ton dossier contenant index.html
   assetsInclude: ["**/*.glb"],
   build: {
     outDir: './root',
