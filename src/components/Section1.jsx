@@ -138,7 +138,7 @@ const Section1 = () => {
             <div className={`relative flex flex-col  sm:mt-[10rem] xs:mt-[6rem] mt-[6rem] ${windowWidth >= 1280 ? 'w-1/2' : 'w-full'}`}>
             <h1 ref={titleRef} className={`h1 px-5 leading-relaxed text-center  min-h-[6rem]  -mt-[2.75rem]
              xl:mt-[3.15rem] 2xl:mt-[5rem] lg:ml-[1rem] lg:mt-[0.75rem]  xl:text-left md:ml-[0rem]
-            ${isHorizontal && windowWidth < 1280 ? 'text-[2rem]': ''}`}>Are you tired of boring 2D portfolios?</h1>
+            ${isHorizontal && windowWidth < 1280 ? 'text-[2rem]': ''}`}>Are you tired of boring 2D websites?</h1>
             {windowWidth < 1280 && (
                     <div ref={divRef} className="relative  flex justify-center items-center min-w-[100vw] min-h-[90%] overflow-hidden">
                       <img src={tourbillon} alt="tourbillon" className={` z-0 w-full h-full ${isHorizontal ? 'object-contain' : 'object-cover'}`} />
