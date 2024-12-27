@@ -7,6 +7,6 @@ export default defineConfig({
   base: '/flaunty/',
   assetsInclude: ["**/*.glb"],
   build: {
-    outDir: './root',
+    outDir: './docs',
   }
 })
